@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <div className="flex items-center gap-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_of_Nahdlatul_Ulama.svg" alt="NU Logo" className="h-12 w-12" />
+        <img src="https://storage.googleapis.com/aistudio-hub-files/collaboration-temp/482b8a24-2c6e-4993-94c6-2e9b925b42ab.png" alt="NU Logo" className="h-12 w-12" />
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Dashboard Utama</h1>
           <p className="mt-1 text-gray-600">Selamat datang di Sistem Manajemen Ranting NU. Pilih modul untuk memulai.</p>

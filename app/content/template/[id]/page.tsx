@@ -80,7 +80,7 @@ const ContentTemplatePage: React.FC = () => {
                 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t-2 border-nuGold">
                     <span className="text-lg font-semibold">NU Ranting System</span>
-                    <img className="h-16 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_of_Nahdlatul_Ulama.svg" alt="NU Logo" />
+                    <img className="h-16 w-auto" src="https://storage.googleapis.com/aistudio-hub-files/collaboration-temp/482b8a24-2c6e-4993-94c6-2e9b925b42ab.png" alt="NU Logo" />
                 </div>
             </div>
         </div>

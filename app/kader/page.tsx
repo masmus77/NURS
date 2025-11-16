@@ -4,13 +4,15 @@ import { getKader, deleteKader } from '../../lib/db';
 import { Kader } from '../../types';
 import Card, { CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
-import { Plus, Edit, Trash2, Download } from 'lucide-react';
+import { Plus, Edit, Trash2, Download, Search } from 'lucide-react';
 import { exportToCsv } from '../../lib/utils';
 import useModal from '../../hooks/useModal';
 import Modal from '../../components/ui/Modal';
+import Input from '../../components/ui/Input';
 
 const KaderPage: React.FC = () => {
   const [kaderList, setKaderList] = useState<Kader[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({ position: '', interests: '', expertise: '' });
   const { isOpen: isDeleteModalOpen, data: deleteKaderId, openModal: openDeleteModal, closeModal: closeDeleteModal } = useModal<string>();
 
@@ -46,6 +48,7 @@ const KaderPage: React.FC = () => {
   }
 
   const filteredKader = kaderList.filter(k =>
+    (k.name.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (filters.position ? k.position.toLowerCase().includes(filters.position.toLowerCase()) : true) &&
     (filters.interests ? k.interests.toLowerCase().includes(filters.interests.toLowerCase()) : true) &&
     (filters.expertise ? k.expertise.toLowerCase().includes(filters.expertise.toLowerCase()) : true)
@@ -75,10 +78,19 @@ const KaderPage: React.FC = () => {
 
       <Card>
         <CardHeader>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <input type="text" placeholder="Filter by Position..." onChange={e => setFilters({...filters, position: e.target.value})} className="p-2 border rounded-md" />
-            <input type="text" placeholder="Filter by Interests..." onChange={e => setFilters({...filters, interests: e.target.value})} className="p-2 border rounded-md" />
-            <input type="text" placeholder="Filter by Expertise..." onChange={e => setFilters({...filters, expertise: e.target.value})} className="p-2 border rounded-md" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="relative md:col-span-2 lg:col-span-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Input
+                type="text"
+                placeholder="Search by Name..."
+                className="pl-10"
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <Input type="text" placeholder="Filter by Position..." onChange={e => setFilters({...filters, position: e.target.value})} />
+            <Input type="text" placeholder="Filter by Interests..." onChange={e => setFilters({...filters, interests: e.target.value})} />
+            <Input type="text" placeholder="Filter by Expertise..." onChange={e => setFilters({...filters, expertise: e.target.value})} />
           </div>
         </CardHeader>
         <CardContent>
