@@ -1,0 +1,5 @@
+{
+  "name": "NU Ranting System",
+  "description": "A comprehensive, client-side application for managing NU Ranting (branch) activities. It includes modules for program tracking, digital archiving, member mapping, work plan building, impact analysis, content generation, and automated reporting. All data is stored locally in the browser using localStorage and IndexedDB.",
+  "requestFramePermissions": []
+}
