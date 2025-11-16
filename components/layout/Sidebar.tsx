@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="flex flex-col flex-grow bg-nuGreen-dark pt-5 pb-4 overflow-y-auto">
       <div className="flex items-center flex-shrink-0 px-4">
-        <img className="h-10 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_of_Nahdlatul_Ulama.svg/1200px-Logo_of_Nahdlatul_Ulama.svg.png" alt="NU Logo" />
+        <img className="h-10 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_of_Nahdlatul_Ulama.svg" alt="NU Logo" />
         <span className="ml-3 text-white text-lg font-bold">NU Ranting System</span>
       </div>
       <div className="mt-5 flex-1 flex flex-col">

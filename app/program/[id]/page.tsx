@@ -67,7 +67,7 @@ const ProgramDetailPage: React.FC = () => {
         Back to Program List
       </Link>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Edit Program</h1>
+        <h1 className="text-3xl font-bold">Program Detail</h1>
         <Button onClick={exportToPdf} variant="secondary">
           <Download className="mr-2 h-4 w-4" /> Export to PDF
         </Button>
@@ -75,9 +75,25 @@ const ProgramDetailPage: React.FC = () => {
 
       <Card id="pdf-export">
         <CardHeader>
-          <CardTitle>Program Details: {program.title}</CardTitle>
+          <CardTitle>Program: {program.title}</CardTitle>
         </CardHeader>
+        
+        {/* Prominent Display Section */}
+        <CardContent className="border-b">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-2">
+                 <div>
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Penanggung Jawab (PIC)</h4>
+                    <p className="mt-1 text-xl font-semibold text-gray-900">{program.pic}</p>
+                </div>
+                 <div className="md:col-span-2">
+                    <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Deskripsi</h4>
+                    <p className="mt-1 text-base text-gray-700 whitespace-pre-wrap">{program.description || 'No description provided.'}</p>
+                </div>
+            </div>
+        </CardContent>
+
         <CardContent className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-800 pt-2">Edit Details</h3>
           <div>
             <label className="block text-sm font-medium text-gray-700">Title</label>
             <Input

@@ -17,8 +17,13 @@ const modules = [
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900">Dashboard Utama</h1>
-      <p className="mt-2 text-gray-600">Selamat datang di Sistem Manajemen Ranting NU. Pilih modul untuk memulai.</p>
+      <div className="flex items-center gap-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_of_Nahdlatul_Ulama.svg" alt="NU Logo" className="h-12 w-12" />
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Dashboard Utama</h1>
+          <p className="mt-1 text-gray-600">Selamat datang di Sistem Manajemen Ranting NU. Pilih modul untuk memulai.</p>
+        </div>
+      </div>
       
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {modules.map((module) => (
